@@ -1,0 +1,60 @@
+:root {
+    --main-black :  #291507;
+    --bg-black : #050709 ; 
+    --main-black : #000000 ; 
+    --line-sp: #4D270C ; 
+    --bg-gray: #E3E1DC ; 
+    --main-wite : #FFFFFF ; 
+    --light-black: rgba(41, 21, 7, 0.6) ; 
+    --light-black2 : #7F736A ; 
+    --hover-light-gray:  rgba(151, 151, 151, 0.1) ; 
+    --fw-400: 400 ; 
+    --fw-500: 500 ; 
+    --fw-700: 700 ; 
+    --fw-600: 600 ; 
+    --logo-font: 'Mystery Quest', cursive;
+    --text-font: 'Montserrat', sans-serif;
+}
+/* setting the border box  */
+html {
+    box-sizing: border-box;
+    font-size: 1em;
+}
+*, *::after , *::before {
+    box-sizing: inherit;
+}
+* {
+    font-family: var(--text-font);
+}
+body {
+    margin: 0;
+    padding: 1.125rem;
+}
+/* logo section */
+.logo {
+    font-family: var(--logo-font);
+    font-size: 1.5em;
+}
+/* navigation section */
+
+.main-content > .logo {
+    font-size: 0.875em;
+}
+.search-nav {
+    display: flex;
+    background-color: var(--bg-black);
+    color: var(--main-wite);
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+.most-searched-breedsbg {
+    background-color: var(--bg-gray);
+}
+
+/* images handling */
+.cat-breeds {
+    display: flex;
+    flex-flow: row wrap;
+}
