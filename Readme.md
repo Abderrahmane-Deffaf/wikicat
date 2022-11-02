@@ -12,3 +12,7 @@ Using https://docs.thecatapi.com/ to complete this challenge. The client-side sh
 
 ## the api 
     https://docs.thecatapi.com/ 
+
+## the filered keys 
+    the cats should have a breed
+    
