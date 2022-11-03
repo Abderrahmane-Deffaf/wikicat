@@ -31,23 +31,92 @@ body {
     padding: 1.125rem;
 }
 /* logo section */
-.logo {
+.logo-top  {
+    padding-bottom: 1rem;
+}
+.logo-top a {
+    text-decoration: none;
+}
+.logo1 {
     font-family: var(--logo-font);
     font-size: 1.5em;
+    color: var(--bg-black);
+}
+.svglogo {
+    width: 2em;
+}
+.svglogo > path {
+    fill: var(--bg-black);
 }
 /* navigation section */
-/* first section search-nav */
-.main-content > .logo {
-    font-size: 0.875em;
+.main-navigation {
+    border-radius: 1.8em;
+    overflow: hidden;
 }
+/* first section search-nav */
+
 .search-nav {
-    display: flex;
     background-color: var(--bg-black);
     color: var(--main-wite);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    padding: 1em;
 }
+
 .main-content {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    z-index: 2;
+}
+.main-content > .logo {
+    font-size: 0.75em;
+}
+.bg-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+.bg-image1 {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.welcom-text {
+    font-size: 0.6em;
+    font-weight: var(--fw-500);
+}
+.search-wrapper {
+    display: flex;
+    background-color: var(--main-wite);
+    align-items: center;
+    width: 90%;
+    border-radius: 1.4em;
+    overflow: hidden;
+    padding: 0.3em;
+}
+#search-input {
+    width: 100%;
+    border: none;
+    background-color: inherit;
+    height: 1.5em;
+    font-size: 1em;
+    font-weight: var(--fw-500);
+}
+input:focus {
+    border: none;
+    outline: none;
+}
+input:active {
+    background-color: inherit;
+}
+.material-symbols-outlined {
+    color: var(--bg-black);
+    font-size: 1em;
 }
 /* second section most seached breeds */
 .most-searched-breeds {
@@ -55,6 +124,10 @@ body {
     padding: 1em;
     display: flex; 
     flex-direction: column;
+}
+.logo2 {
+    font-family: var(--logo-font);
+    color:var(--main-wite);
 }
 .most-searched {
     margin: 0;
@@ -80,6 +153,7 @@ body {
 }
 .breed {
     display: flex;
+    height: 100%;
     flex-direction: column;
     flex-basis: 49%;
 }
@@ -90,8 +164,8 @@ body {
 
 .breed img {
     object-fit: cover;
-    width: 134px;
-    height: 134px;
+    aspect-ratio: 1/1;
+    min-width: 134px;
     border-radius: 0.6em;
 }
 
@@ -103,5 +177,4 @@ body {
 }
 .breed-links {
     text-decoration: none;
-
 }

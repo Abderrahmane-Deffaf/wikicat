@@ -22,7 +22,9 @@ fetch(url,{headers: {
         imagesData.forEach((element , index) => {
             console.log(element)
             console.log(index) ; 
-            imagesPlaceHolder[index].src = element.url ; 
+            if(index != 0) {
+                imagesPlaceHolder[index].src = element.url ; 
+            }
         });
         /* converting the breedNamesPlaceholder to an array */
         var breedNamesPlaceholderarr = Object.values(breedNamesPlaceholder) ; 
