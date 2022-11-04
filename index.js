@@ -1,5 +1,5 @@
 /* returning the placeholder for the images */
-const imagesPlaceHolder = document.getElementsByTagName("img") ; 
+const imagesPlaceHolder = document.querySelectorAll(".loadimages") ; 
 console.log(imagesPlaceHolder) ; 
 console.log(typeof(imagesPlaceHolder))
 /* returning the name breed placeholder  */
@@ -22,9 +22,7 @@ fetch(url,{headers: {
         imagesData.forEach((element , index) => {
             console.log(element)
             console.log(index) ; 
-            if(index != 0) {
                 imagesPlaceHolder[index].src = element.url ; 
-            }
         });
         /* converting the breedNamesPlaceholder to an array */
         var breedNamesPlaceholderarr = Object.values(breedNamesPlaceholder) ; 
