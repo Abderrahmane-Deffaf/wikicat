@@ -1,5 +1,6 @@
 /* importing the api key  */
-import cat_api_key from "./apikey";
+import cat_api_key from "apikey";
+console.log(cat_api_key) ; 
 const cat_api = cat_api_key ; 
 /* returning the placeholder for the images */
 const imagesPlaceHolder = document.querySelectorAll(".loadimages") ; 
