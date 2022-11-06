@@ -1,3 +1,6 @@
+/* importing the api key  */
+import cat_api_key from "./apikey";
+const cat_api = cat_api_key ; 
 /* returning the placeholder for the images */
 const imagesPlaceHolder = document.querySelectorAll(".loadimages") ; 
 console.log(imagesPlaceHolder) ; 
@@ -8,7 +11,7 @@ console.log(typeof(breedNamesPlaceholder)) ;
 console.log(breedNamesPlaceholder) ; 
 //change the limit to however many images to use
 const url = `https://api.thecatapi.com/v1/images/search?limit=7&has_breeds=1`;
-const api_key = "live_Xa1qvqfdN6W1Oo0voplcAAmVdS2mBoUlWzeXAKLL1dX8xq2o5LHMLIlTnl4Z9hiq"
+const api_key = cat_api ; 
 
 fetch(url,{headers: {
         'x-api-key': api_key
