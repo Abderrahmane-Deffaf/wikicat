@@ -29,11 +29,18 @@ body {
     margin: 0;
     padding: 1.125rem 1.125rem 0rem 1.125rem;
     font-size: calc(1rem + 1vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 /* logo section */
 .logo-top  {
     padding-bottom: 1em;
     font-size: 1em;
+}
+.logo-top0 {
+    width: 100%;
 }
 .logo-top a {
     text-decoration: none;
@@ -182,16 +189,20 @@ input:active {
 .main {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
+    height: 100%;
 }
 /* first section description */
 .description {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .have-a-cat {
     font-weight: var(--fw-700);
-    font-size: 2.4em;
+    font-size: 2.2em;
     color: var(--bg-black);
+    margin: 0.5em 0em;
 }
 .have-a-cat::before {
     content: "";
@@ -205,7 +216,7 @@ input:active {
 .explanation {
     font-weight: var(--fw-500);
     color: var(--bg-black);
-    font-size: 1em;
+    font-size: 0.7em;
 }
 .read-more-elements {
     display: flex; 
@@ -223,7 +234,7 @@ input:active {
     display: grid;
     grid-template-columns: 12% 40% 40%;
     grid-template-rows: 34% 44% 12% ;
-    width: 100%;
+    flex-basis: 100%;
     gap: 4%; 
     margin-top: 4em;
 }
@@ -244,13 +255,18 @@ input:active {
 }
 
 /* footer section */
+footer {
+    width: 100%;
+}
 .footer-navigation {
     display: flex;
     flex-direction: column;
     background-color: var(--bg-black);
     border-radius: 2.625rem 2.625rem 0rem 0rem;
     padding: 1em;
+    width: 100%;
 }
+
 .white-footer , .white-footer>path {
     color: var(--main-wite);
     fill: var(--main-wite);
@@ -261,6 +277,10 @@ small {
 .username {
     font-weight: var(--fw-700);
     text-decoration: underline;
+}
+/* setting the max width for all the sections */
+.main , header , .logo-top0 , footer {
+    max-width: 1048px;
 }
 @media only screen and (min-width:800px) {
     .breed {
@@ -280,5 +300,23 @@ small {
         font-weight: var(--fw-700);
         color: var(--light-black);
         font-size: 1em;
+    }
+    .main {
+        flex-direction: row;
+        gap: 1%;
+        margin: 3em 0em;
+        align-items: center;
+    }
+    .description , .illusration {
+        flex-basis: 49%;
+    }
+    .illusration {
+        margin: 0;
+        height: 70%;
+    }
+    .footer-navigation  {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 }
