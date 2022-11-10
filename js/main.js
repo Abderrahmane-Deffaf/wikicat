@@ -9,7 +9,7 @@ const breedNamesPlaceholder = document.getElementsByClassName("breed-name") ;
 console.log(typeof(breedNamesPlaceholder)) ; 
 console.log(breedNamesPlaceholder) ; 
 //change the limit to however many images to use
-const url = `https://api.thecatapi.com/v1/images/search?limit=7&has_breeds=1`;
+const url = `https://api.thecatapi.com/v1/images/search?limit=4&has_breeds=1`;
 const api_key = cat_api ; 
 
 fetch(url,{headers: {

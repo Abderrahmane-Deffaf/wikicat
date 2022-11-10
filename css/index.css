@@ -95,6 +95,10 @@ body {
 .main-content > .logo2 {
     font-size: 0.93rem;
 }
+.svglogo2 {
+    display: none;
+}
+
 .bg-image {
     width: 100%;
     height: 100%;
@@ -220,18 +224,15 @@ input:active {
 
 /* styling the section of the main  */
 .main {
-    display: grid;
-    grid-template-columns: repeat(2 , 1fr);
-    grid-template-rows: repeat(2,1fr);
+    display: flex;
+    flex-direction: column;
     margin-bottom: 1.46rem;
-    height: 100%;
 }
 
 
 
 /* first section description */
 .description {
-    grid-area: 1/1/2/3;
     display: flex;
     flex-direction: column;
 }
@@ -270,21 +271,22 @@ input:active {
     font-size: 0.8rem;
 }
 .illusration {
-    grid-area: 2/1/3/3;
     display: grid;
     grid-template-columns: 8% 38% 42%;
     grid-template-rows: 36% 38% 12% ;
     gap: 6%; 
     margin-top: 4.2rem;
 }
+
 .illuimg {
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
     border-radius: 1.6rem;
 }
 .illuimg1 {
     grid-area: 1/1/2/3;
+    object-position: 20% 20%;
 }
 .illuimg2 {
     grid-area: 1/3/3/4;
@@ -342,8 +344,38 @@ small {
     .main-content {
         width: 60%;
     }
+    .second-logo-section {
+        display: flex;
+        align-items: baseline;
+    }
+    .svglogo2 {
+        display: block;
+    }
+    .svglogo2 {
+        width: 2rem;
+    }
+    .svglogo2 > path {
+        fill: var(--main-wite);
+    }
     .bg-image1 {
         object-position: 0px -200px;
+    }
+
+
+    .main {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto ;
+    }
+    .main {
+        margin: 6rem 0em;
+    }
+    .description {
+        grid-column: span 1;
+        height: 100%;
+    }
+    .illusration {
+        grid-column: span 1;
     }
     .breed {
         flex-basis: 22%;
@@ -371,19 +403,7 @@ small {
         color: var(--light-black);
         font-size: 0.7em;
     }
-    .main {
-        flex-direction: row;
-        gap: 1%;
-        margin: 3em 0em;
-        align-items: center;
-    }
-    .description , .illusration {
-        flex-basis: 49%;
-    }
-    .illusration {
-        margin: 0;
-        height: 70%;
-    }
+
     .footer-navigation  {
         flex-direction: row;
         align-items: center;
