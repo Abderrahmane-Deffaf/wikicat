@@ -1,0 +1,118 @@
+:root {
+    --main-black: #291507;
+    --bg-black: #050709;
+    --main-black: #000000;
+    --line-sp: #4D270C;
+    --bg-gray: #E3E1DC;
+    --main-wite: #FFFFFF;
+    --light-black: rgba(41, 21, 7, 0.6);
+    --light-black2: #7F736A;
+    --hover-light-gray: rgba(151, 151, 151, 0.1);
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+    --fw-600: 600;
+    --logo-font: 'Mystery Quest', cursive;
+    --text-font: 'Montserrat', sans-serif;
+}
+/* setting the border box  */
+html {
+    box-sizing: border-box;
+    font-size: calc(9px + 1.6vw);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+* {
+    font-family: var(--text-font);
+}
+
+body {
+    margin: 0;
+    padding: 1.53rem 1.2rem 0rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* logo section */
+.logo-top {
+    padding-bottom: 1rem;
+}
+
+.logo-top0 {
+    width: 100%;
+}
+
+.logo-top a {
+    text-decoration: none;
+}
+
+.logo1 {
+    font-family: var(--logo-font);
+    color: var(--bg-black);
+    font-size: 1.6rem;
+}
+
+.svglogo {
+    width: 2rem;
+}
+
+.svglogo>path {
+    fill: var(--bg-black);
+}
+
+
+
+
+/*  */
+h1 {
+    color: var(--bg-black);
+}
+
+
+
+
+/* footer section */
+footer {
+    width: 100%;
+}
+
+.footer-navigation {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-black);
+    border-radius: 2.8rem 2.8rem 0rem 0rem;
+    padding: 2.2rem 1rem 1rem 1.9rem;
+    width: 100%;
+}
+
+.footer-text {
+    font-size: 0.7em;
+    margin: 0;
+}
+
+.white-footer,
+.white-footer>path {
+    color: var(--main-wite);
+    fill: var(--main-wite);
+}
+
+.white-footer {
+    font-size: 0.875em;
+    font-weight: var(--fw-400);
+}
+
+small {
+    color: var(--main-wite);
+}
+
+.username {
+    font-weight: var(--fw-700);
+    text-decoration: underline;
+}
