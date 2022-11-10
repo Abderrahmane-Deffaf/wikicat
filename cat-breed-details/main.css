@@ -41,9 +41,6 @@ body {
 }
 
 /* logo section */
-.logo-top {
-    padding-bottom: 1rem;
-}
 
 .logo-top0 {
     width: 100%;
@@ -70,13 +67,110 @@ body {
 
 
 
-/*  */
-h1 {
-    color: var(--bg-black);
+/* main section */
+.main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.66rem;
+}
+
+
+/* info section */
+.info {
+    display: flex;
+    flex-direction: row;
+}
+.image-representaion {
+    flex-basis: 50%;
+    overflow: hidden;
+}
+.imgrep {
+    width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 1.6rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.text-info {
+    flex-basis: 50%;
+}
+
+
+.breed-caracteristic {
+    list-style: none; 
+    padding: 0;
 }
 
 
 
+.range {
+    list-style: none;
+    display: flex;
+    gap: 2%;
+}
+.rangeele {
+    height: 13px;
+    width: 60px;
+    background-color: var(--light-black2);
+    border-radius: 10px;
+}
+li:has(li) {
+    display: flex;
+    align-items: center;
+}
+h1 {
+    color: var(--bg-black);
+    font-size: 2.4rem;
+    font-weight: var(--fw-600);
+    margin-top: 0;
+}
+.breed-defenition {
+    font-size: 1.2rem;
+    font-weight: var(--fw-500);
+}
+li {
+    font-size: 1rem;
+    font-weight: var(--fw-700);
+    text-transform:capitalize;
+}
+li>span {
+    font-weight: var(--fw-500);
+}
+li:has(ul) {
+    display: flex;
+}
+
+li:has(ul) >p {
+    flex-basis: 50%;
+}
+.range {
+    flex-basis: 50%;
+}
+
+/* other images section */
+.ohter-photos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5.33rem;
+    margin-bottom: 5rem;
+}
+.other-images {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3%;
+}
+.imgillustration {
+    flex-basis: 22.75%;
+    margin-bottom: 1.55rem;
+}
+.otherimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.6rem;
+    object-position: center;
+}
 
 /* footer section */
 footer {
@@ -115,4 +209,20 @@ small {
 .username {
     font-weight: var(--fw-700);
     text-decoration: underline;
+}
+
+
+/* max width */
+.logo-top , .main , footer {
+    max-width: 1248px;
+}
+
+/* sets the media queries */
+@media only screen and (min-width:800px) {
+
+    .footer-navigation {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

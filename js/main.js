@@ -10,10 +10,15 @@ const imagesPlaceHolder = document.querySelectorAll(".loadimages") ;
 const breedNamesPlaceholder = document.getElementsByClassName("breed-name") ; 
 
 
+/* returing the breed links */
+const breedLinks = document.querySelectorAll(".breed-links"); 
 
 //change the limit to however many images to use
 const url = `https://api.thecatapi.com/v1/images/search?limit=4&has_breeds=1`;
 const api_key = cat_api ; 
+
+
+
 
 fetch(url,{headers: {
         'x-api-key': api_key
@@ -23,6 +28,7 @@ fetch(url,{headers: {
     })
     .then((data) => {
         let imagesData = data;
+        console.log(data) ; 
         imagesData.forEach((element , index) => {
                 imagesPlaceHolder[index].src = element.url ; 
         });
@@ -32,23 +38,17 @@ fetch(url,{headers: {
             element.textContent = imagesData[index].breeds[0].name ; 
         })
     //imagesPlaceHolder[0].src = imagesData[0].url ; 
+        breedLinks.forEach((element, index) => {
+            element.addEventListener("click", function () {
+                window.localStorage.setItem("api_content", JSON.stringify(data[index])) ; 
+            })
+        }) 
+
 })
 .catch(function(error) {
     console.log(error);
 });
 
-/* returing the breed links */
-const breedLinks = document.querySelectorAll(".breed-links") ; 
-console.log(breedLinks) ; 
 
-console.log(breedLinks[1].previousElementSibling.src)
+
 /* storing the name of the breed when he click on the links */
-breedLinks.forEach((element) => {
-    console.log(element.firstElementChild.textContent) ;
-    element.addEventListener("click" , function() {
-        var breed_name = element.firstElementChild.textContent ; 
-        window.localStorage.setItem("breedName",breed_name) ; 
-        var img_url = element.previousElementSibling.src ; 
-        window.localStorage.setItem("img_url",img_url) ; 
-    })
-}) 
