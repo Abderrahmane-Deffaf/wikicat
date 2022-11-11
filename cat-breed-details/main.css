@@ -66,34 +66,33 @@ body {
 
 
 
-
-/* main section */
+  /* main section */
 .main {
     display: flex;
     flex-direction: column;
-    margin-top: 2.66rem;
+    margin-top: 1.3rem;
 }
-
 
 /* info section */
 .info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+.text-info {
+    margin-top: 1rem;
+}
+.text-info {
+    flex-basis: 100%;
 }
 .image-representaion {
-    flex-basis: 50%;
-    overflow: hidden;
+    flex-basis: 100%;
 }
 .imgrep {
-    width: 80%;
+    width: 40%;
     aspect-ratio: 1/1;
     border-radius: 1.6rem;
     object-fit: cover;
     object-position: center;
-}
-
-.text-info {
-    flex-basis: 50%;
 }
 
 
@@ -103,34 +102,39 @@ body {
 }
 
 
-
+.litext {
+    margin-bottom: 0.5rem;
+}
 .range {
     list-style: none;
     display: flex;
     gap: 2%;
+    flex-basis: 100%;
+    padding: 0;
 }
+
 .rangeele {
-    height: 13px;
-    width: 60px;
+    height: 0.8rem;
+    width: 3rem;
     background-color: var(--light-black2);
     border-radius: 10px;
 }
 li:has(li) {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 h1 {
     color: var(--bg-black);
-    font-size: 2.4rem;
+    font-size: 1.2rem;
     font-weight: var(--fw-600);
     margin-top: 0;
 }
 .breed-defenition {
-    font-size: 1.2rem;
+    font-size: 0.6rem;
     font-weight: var(--fw-500);
 }
 li {
-    font-size: 1rem;
+    font-size: 0.5rem;
     font-weight: var(--fw-700);
     text-transform:capitalize;
 }
@@ -142,17 +146,16 @@ li:has(ul) {
 }
 
 li:has(ul) >p {
-    flex-basis: 50%;
+    flex-basis: 100%;
+    margin-bottom: 0.8rem;
 }
-.range {
-    flex-basis: 50%;
-}
+
 
 /* other images section */
 .ohter-photos {
     display: flex;
     flex-direction: column;
-    margin-top: 5.33rem;
+    margin-top: 2.3rem;
     margin-bottom: 5rem;
 }
 .other-images {
@@ -160,17 +163,27 @@ li:has(ul) >p {
     flex-flow: row wrap;
     gap: 3%;
 }
-.imgillustration {
-    flex-basis: 22.75%;
-    margin-bottom: 1.55rem;
-}
 .otherimg {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 1.6rem;
     object-position: center;
+    margin-top: 0.5rem;
 }
+
+.imgillustration {
+    flex-basis: 48.5%;
+    margin-bottom: 1.55rem;
+}
+h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+
+
+
 
 /* footer section */
 footer {
@@ -182,13 +195,13 @@ footer {
     flex-direction: column;
     background-color: var(--bg-black);
     border-radius: 2.8rem 2.8rem 0rem 0rem;
-    padding: 2.2rem 1rem 1rem 1.9rem;
+    padding: 1.2rem 1rem 1.3rem 1.9rem;
     width: 100%;
 }
 
 .footer-text {
     font-size: 0.7em;
-    margin: 0;
+    margin: 0.4rem 0 0 0;
 }
 
 .white-footer,
@@ -218,8 +231,68 @@ small {
 }
 
 /* sets the media queries */
+@media only screen and (min-width:550px) {
+    .range {
+        margin-bottom: 0.5rem;
+    }
+    li:has(ul) {
+        flex-direction: row;
+    }
+    li:has(ul) > p {
+        margin: 0;
+    }
+    .info {
+            display: flex;
+            flex-direction: column;
+        }
+    .image-representaion {
+        flex-basis: 80%;
+        overflow: hidden;
+    }
+    .text-info {
+        flex-basis: 100%;
+    }
+    .imgrep {
+            width: 40%;
+    }
+    /* footer section */
+    .footer-navigation {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+}
 @media only screen and (min-width:800px) {
-
+    
+    /* info section */
+    .info {
+            display: flex;
+            flex-direction: row;
+        }
+    
+    .image-representaion {
+            flex-basis: 40%;
+            overflow: hidden;
+        }
+    .text-info {
+            flex-basis: 60%;
+        }
+    /* other images section */   
+        .imgrep {
+            width: 90%;
+        }
+        .other-images {
+            display: flex;
+            flex-flow: row wrap;
+            gap: 3%;
+        }
+    
+        .imgillustration {
+            flex-basis: 22.75%;
+            margin-bottom: 1.55rem;
+        }
+    /* footer section */
     .footer-navigation {
         flex-direction: row;
         align-items: center;

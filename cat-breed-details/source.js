@@ -35,7 +35,7 @@ var i = 0 , j = 0;
 
 function setrange(element  , count) { 
     for( ; i< count ; i++)  {
-        element[i].style.background = "#050709" ; 
+        element[i].style.background = "#4D270C" ; 
     }
     ++j ; 
     i = j*5 ; 

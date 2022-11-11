@@ -49,6 +49,8 @@ fetch(url,{headers: {
     console.log(error);
 });
 
-
+window.onload = function() {
+    window.localStorage.clear() ; 
+}
 
 /* storing the name of the breed when he click on the links */
