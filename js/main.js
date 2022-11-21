@@ -37,7 +37,9 @@ fetch(url,{headers: {
         breedNamesPlaceholderarr.forEach((element , index) => {
             element.textContent = imagesData[index].breeds[0].name ; 
         })
-    //imagesPlaceHolder[0].src = imagesData[0].url ; 
+
+        /* storing the name of the breed when he click on the links */
+
         breedLinks.forEach((element, index) => {
             element.addEventListener("click", function () {
                 window.localStorage.setItem("api_content", JSON.stringify(data[index])) ; 
@@ -53,4 +55,53 @@ window.onload = function() {
     window.localStorage.clear() ; 
 }
 
-/* storing the name of the breed when he click on the links */
+/* working on the implentation of the search exemple */
+const inputSearch = document.getElementById("search-input") ; 
+console.log(inputSearch) ; 
+const optgroup = document.querySelector(".opgroup") ; 
+console.log(optgroup) ; 
+
+cosl = function() {
+    optgroup.style.width = inputSearch.clientWidth + "px"; 
+}
+setTimeout(cosl, 2000)
+window.onresize = function() {
+    optgroup.style.width = inputSearch.clientWidth + "px"; 
+    console.log(optgroup.style.width)
+    console.log(inputSearch.clientWidth) ; 
+}
+/* making the request for the 100 breed cat */
+const url2 = `https://api.thecatapi.com/v1/images/search?limit=100&has_breeds=1`;
+
+fetch(url2, {
+    headers: {
+        'x-api-key': api_key
+    }
+})
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        var arrholder = [] ; 
+        data.forEach((element) => {
+            if(!arrholder.includes( element.breeds[0].name)) {
+                arrholder.push(element.breeds[0].name); 
+                let anchor = document.createElement("a");
+                anchor.href = "/cat-breed-details/main.html";
+                anchor.textContent = element.breeds[0].name;
+                optgroup.appendChild(anchor); 
+                anchor.addEventListener("click", function() {
+                    window.localStorage.setItem("api_content", JSON.stringify(element)); 
+                })
+            }
+        })
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+inputSearch.addEventListener("focus" , function() {
+    optgroup.style.display = "flex" ; 
+})
+inputSearch.addEventListener("blur" , function() {
+    optgroup.style.display = "none" ; 
+})

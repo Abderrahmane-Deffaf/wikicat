@@ -69,6 +69,7 @@ body {
 .main-navigation {
     border-radius: 2.8rem;
     overflow: hidden;
+    position: relative;
 }
 
 
@@ -125,25 +126,45 @@ body {
     border-radius: 1.4em;
     overflow: hidden;
     padding: 0.3em;
+    flex-flow: wrap;
 }
 #search-input {
-    width: 100%;
     border: none;
     background-color: inherit;
     height: 1.5em;
     font-size: 1em;
     font-weight: var(--fw-500);
 }
+
 input:focus {
     border: none;
     outline: none;
 }
+
 input:active {
     background-color: inherit;
 }
 .search{
     color: var(--bg-black);
     font-size: 1em;
+}
+
+.opgroup {
+    flex-basis: 100%;
+    padding: 0;
+    max-height: 150px;
+    overflow: scroll;
+    display: none;
+    flex-flow: row wrap;
+}
+.opgroup > a {
+    color: var(--bg-black);
+    text-decoration: none;
+    padding: 0.5rem;
+    width: 100%;
+}
+.opgroup > a:hover {
+    background-color: var(--bg-gray);
 }
 
 
