@@ -123,7 +123,7 @@ body {
     background-color: var(--main-wite);
     align-items: center;
     width: 90%;
-    border-radius: 1.4em;
+    border-radius: 3px;
     overflow: hidden;
     padding: 0.3em;
     flex-flow: wrap;
@@ -133,6 +133,7 @@ body {
     background-color: inherit;
     height: 1.5em;
     font-size: 1em;
+    width: 100%;
     font-weight: var(--fw-500);
 }
 
@@ -153,8 +154,8 @@ input:active {
     flex-basis: 100%;
     padding: 0;
     max-height: 150px;
-    overflow: scroll;
-    display: none;
+    overflow-y: scroll;
+    display: flex;
     flex-flow: row wrap;
 }
 .opgroup > a {
@@ -166,7 +167,23 @@ input:active {
 .opgroup > a:hover {
     background-color: var(--bg-gray);
 }
+::-webkit-scrollbar {
+    background-color: var(--bg-gray);
+    border-radius: 10px;
+    width: 13px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-black);
+    border-radius: 10px;
+    height: 30px;
+}
+.visible {
+    display: none;
+}
 
+.hide {
+    display: none;
+}
 
 
 
@@ -351,7 +368,9 @@ small {
     font-weight: var(--fw-700);
     text-decoration: underline;
 }
-
+.githublink {
+    color: var(--bg-gray);
+}
 
 
 /* setting the max width for all the sections */

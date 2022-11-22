@@ -51,25 +51,15 @@ fetch(url,{headers: {
     console.log(error);
 });
 
-window.onload = function() {
-    window.localStorage.clear() ; 
-}
+
 
 /* working on the implentation of the search exemple */
 const inputSearch = document.getElementById("search-input") ; 
-console.log(inputSearch) ; 
 const optgroup = document.querySelector(".opgroup") ; 
 console.log(optgroup) ; 
+const search_wrapper = document.querySelector(".search-wrapper") ; 
 
-cosl = function() {
-    optgroup.style.width = inputSearch.clientWidth + "px"; 
-}
-setTimeout(cosl, 2000)
-window.onresize = function() {
-    optgroup.style.width = inputSearch.clientWidth + "px"; 
-    console.log(optgroup.style.width)
-    console.log(inputSearch.clientWidth) ; 
-}
+
 /* making the request for the 100 breed cat */
 const url2 = `https://api.thecatapi.com/v1/images/search?limit=100&has_breeds=1`;
 
@@ -88,6 +78,7 @@ fetch(url2, {
                 arrholder.push(element.breeds[0].name); 
                 let anchor = document.createElement("a");
                 anchor.href = "/cat-breed-details/main.html";
+                anchor.className="anchor" ; 
                 anchor.textContent = element.breeds[0].name;
                 optgroup.appendChild(anchor); 
                 anchor.addEventListener("click", function() {
@@ -98,10 +89,25 @@ fetch(url2, {
     })
     .catch(function (error) {
         console.log(error);
-    });
-inputSearch.addEventListener("focus" , function() {
-    optgroup.style.display = "flex" ; 
+});
+
+
+inputSearch.addEventListener("click" , ()=> {
+    optgroup.classList.toggle("visible") ;
 })
-inputSearch.addEventListener("blur" , function() {
-    optgroup.style.display = "none" ; 
+inputSearch.addEventListener("keyup" ,  function() {
+    console.log(this.value.toLowerCase()) ; 
+    console.log(document.querySelectorAll(".anchor")) ; 
+    document.querySelectorAll(".anchor").forEach(element => {
+        if(element.textContent.toLowerCase().indexOf(this.value)<0) {
+            element.classList.add("hide") ; 
+        }
+        else {
+            element.classList.remove("hide") ; 
+        }
+    }) 
+
 })
+window.onload = function() {
+    window.localStorage.clear() ; 
+}

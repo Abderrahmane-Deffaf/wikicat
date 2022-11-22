@@ -150,6 +150,16 @@ li:has(ul) >p {
     margin-bottom: 0.8rem;
 }
 
+::-webkit-scrollbar {
+    background-color: var(--bg-gray);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-black);
+    border-radius: 10px;
+    height: 30px;
+}
 
 /* other images section */
 .ohter-photos {
@@ -224,7 +234,9 @@ small {
     text-decoration: underline;
 }
 
-
+.githublink {
+    color: var(--bg-gray);
+}
 /* max width */
 .logo-top , .main , footer {
     max-width: 1248px;
